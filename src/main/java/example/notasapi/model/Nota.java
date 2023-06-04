@@ -9,7 +9,6 @@ import java.util.List;
 @Entity
 @Data
 public class Nota {
-
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String titulo;
@@ -17,5 +16,4 @@ public class Nota {
     private LocalDate dataCriacao;
     private String autor;
     private Categoria categoria;
-
 }
