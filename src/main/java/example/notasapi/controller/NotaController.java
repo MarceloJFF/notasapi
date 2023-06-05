@@ -50,6 +50,7 @@ public class NotaController {
     // update
     @PutMapping("/{id}")
     public ResponseEntity<NotaDTO> updateNota(@PathVariable Integer id, @RequestBody NotaDTO updateNotaRequest) {
+        
         return new ResponseEntity<>(notaService.update(id, updateNotaRequest), HttpStatus.OK);
     }
 
