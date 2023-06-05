@@ -56,8 +56,14 @@ public class NotaController {
 
     // delete
     @DeleteMapping("/{id}")
-    public ResponseEntity<NotaDTO> deleteNota(@PathVariable Integer id) {
-        return new ResponseEntity<>(notaService.delete(id));
+    public ResponseEntity<Object> deleteNota(@PathVariable Integer id) {
+        if(notaService.findById(id)!= null){
+            notaService.delete(id);
+            return ResponseEntity.status(HttpStatus.OK).body("Nota deletada com sucesso.");
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Não foi possível excluir, pois essa nota não existe");
+
+        
     }
 
 }
