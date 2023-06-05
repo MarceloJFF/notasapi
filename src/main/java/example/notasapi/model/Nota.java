@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Data
@@ -15,5 +14,6 @@ public class Nota {
     private String conteudo;
     private LocalDate dataCriacao;
     private String autor;
+    @Enumerated(EnumType.STRING)
     private Categoria categoria;
 }
